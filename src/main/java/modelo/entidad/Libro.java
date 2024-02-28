@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -28,8 +29,11 @@ public class Libro {
     @ManyToOne
     @JoinColumn(name = "editorial_id")
     private Editorial editorial;
-    
+
     @ManyToMany
+    @JoinTable(name = "libro_libreria",
+               joinColumns = @JoinColumn(name = "libro_id"),
+               inverseJoinColumns = @JoinColumn(name = "libreria_id"))
     private List<Libreria> librerias;
 
     // Constructor
@@ -87,6 +91,6 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro [id=" + id + ", titulo=" + titulo + ", precio=" + precio + ", autor=" + autor.getNombre() + " " + autor.getApellidos() + ", editorial=" + editorial.getNombre() + "]";
+        return "Libro [id=" + id + ", titulo=" + titulo + ", precio=" + precio + "]";
     }
 }

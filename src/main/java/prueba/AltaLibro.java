@@ -100,12 +100,11 @@ public class AltaLibro {
         
         
         List<Libro> libros2 = new ArrayList<>();
-        libros.add(libro5);
-        libros.add(libro6);
-        libros.add(libro7);
-        libros.add(libro8);
-        
-        
+        libros2.add(libro5);
+        libros2.add(libro6);
+        libros2.add(libro7);
+        libros2.add(libro8);
+
         libre2.setLibros(libros2);
         
         

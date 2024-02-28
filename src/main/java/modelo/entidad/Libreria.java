@@ -64,13 +64,11 @@ public class Libreria {
         return libros;
     }
 
-    
-
     public void setLibros(List<Libro> libros) {
-		this.libros = libros;
-	}
+        this.libros = libros;
+    }
 
-	@Override
+    @Override
     public String toString() {
         return "Libreria [id=" + id + ", nombre=" + nombre + ", nombreDueno=" + nombreDueno + ", direccion=" + direccion + "]";
     }
